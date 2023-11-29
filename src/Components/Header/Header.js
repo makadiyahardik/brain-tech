@@ -145,7 +145,7 @@ const Header = () => {
                 </div>
               </div>
 
-              <div className="md:hidden flex mx-4 " onClick={onMoboClicks}>
+              <div className="md:hidden flex justify-end " onClick={onMoboClicks}>
                 <button
                   className="navbar-toggler"
                   type="button"
