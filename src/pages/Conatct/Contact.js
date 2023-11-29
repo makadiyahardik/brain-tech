@@ -1,4 +1,6 @@
 import React from 'react';
+import InputType from '../../atoms/InputType/InputType';
+import TexxtArea from '../../atoms/TextArea/TexxtArea';
 
 const Contact = () => {
   return (
@@ -10,66 +12,47 @@ const Contact = () => {
             Lorem ipsum dolor sit amet consectetur.
           </h3>
         </div>
-
-        
-
-
-
         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
   <div className="row align-items-stretch mb-5">
     <div className="col-md-6">
       <div className="form-group">
-        <input
-          className="form-control"
+      <InputType
           id="name"
           type="text"
           placeholder="Your Name *"
-          data-sb-validations="required"
+          error="A name is required."
+          required="required."
         />
-        <div className="invalid-feedback" data-sb-feedback="name:required">
-          A name is required.
-        </div>
       </div>
       <div className="form-group">
-        <input
-          className="form-control"
+      <InputType
           id="email"
           type="email"
-          placeholder="Your Email *"
-          data-sb-validations="required,email"
+          placeholder="Your Email  *"
+          error="Email is not valid."
+          required="required,email"
         />
-        <div className="invalid-feedback" data-sb-feedback="email:required">
-          An email is required.
-        </div>
-        <div className="invalid-feedback" data-sb-feedback="email:email">
-          Email is not valid.
-        </div>
+       
       </div>
       <div className="form-group mb-md-0">
-        <input
-          className="form-control"
-          id="phone"
-          type="tel"
-          placeholder="Your Phone *"
-          data-sb-validations="required"
-        />
-        <div className="invalid-feedback" data-sb-feedback="phone:required">
-          A phone number is required.
-        </div>
+      <InputType
+        id="phone"
+        type="tel"
+        placeholder="Your Phone *"
+        error="         A phone number is required."
+        required="required"
+      /> 
       </div>
     </div>
     <div className="col-md-6">
       <div className="form-group form-group-textarea mb-md-0">
-        <textarea
-          className="form-control"
-          id="message"
-          placeholder="Your Message *"
-          data-sb-validations="required"
-          defaultValue={""}
-        />
-        <div className="invalid-feedback" data-sb-feedback="message:required">
-          A message is required.
-        </div>
+      <TexxtArea
+        id="message"
+        placeholder="Your Message *"
+        error=" A message is required."
+        required="required"
+        defaultValue=""
+      />
       </div>
     </div>
   </div>
