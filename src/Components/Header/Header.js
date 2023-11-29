@@ -21,13 +21,13 @@ const Header = () => {
       >
         <div
           className={
-            'fixed top-0 md:w-full md:py-[30px] py-[20px]  transition-all ' +
-            (scrollActive ? ' z-[1000] md:shadow-md bg-black' : ' pt-4')
+            'fixed top-0 md:w-full md:py-[30px] flex justify-between py-[20px] w-full px-2  transition-all ' +
+            (scrollActive ? ' z-[1000] md:shadow-md flex justify-between items-center w-full bg-black' : ' pt-4')
           }
         >
-          <div className="md:max-w-[1400px] w-full bg-transperent  md:px-10 px-5 mx-auto ">
-            <div className="flex  justify-between  md:items-center  ">
-              <div className="flex justify-start items-center ">
+          <div className="md:max-w-[1400px] w-full bg-transperent  mx-auto ">
+            <div className="flex  justify-between  items-center  ">
+              <div className="flex justify-between items-center ">
                 <img
                   src="../assets/images/navbar-logo.svg"
                   className="h-[2rem] w-auto "
@@ -149,14 +149,10 @@ const Header = () => {
                 <button
                   className="navbar-toggler"
                   type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#navbarResponsive"
-                  aria-controls="navbarResponsive"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
+              
                 >
                   Menu
-                  <i className="fas fa-bars ms-1" />
+                  <i className="fas fa-bars mx-1" />
                 </button>
               </div>
 
