@@ -19,7 +19,6 @@ const Contact = () => {
   <div className="row align-items-stretch mb-5">
     <div className="col-md-6">
       <div className="form-group">
-        {/* Name input*/}
         <input
           className="form-control"
           id="name"
@@ -32,7 +31,6 @@ const Contact = () => {
         </div>
       </div>
       <div className="form-group">
-        {/* Email address input*/}
         <input
           className="form-control"
           id="email"
@@ -48,7 +46,6 @@ const Contact = () => {
         </div>
       </div>
       <div className="form-group mb-md-0">
-        {/* Phone number input*/}
         <input
           className="form-control"
           id="phone"
@@ -63,7 +60,6 @@ const Contact = () => {
     </div>
     <div className="col-md-6">
       <div className="form-group form-group-textarea mb-md-0">
-        {/* Message input*/}
         <textarea
           className="form-control"
           id="message"
@@ -77,28 +73,9 @@ const Contact = () => {
       </div>
     </div>
   </div>
-  {/* Submit success message*/}
-  {/**/}
-  {/* This is what your users will see when the form*/}
-  {/* has successfully submitted*/}
-  <div className="d-none" id="submitSuccessMessage">
-    <div className="text-center text-white mb-3">
-      <div className="fw-bolder">Form submission successful!</div>
-      To activate this form, sign up at
-      <br />
-      <a href="https://startbootstrap.com/solution/contact-forms">
-        https://startbootstrap.com/solution/contact-forms
-      </a>
-    </div>
-  </div>
-  {/* Submit error message*/}
-  {/**/}
-  {/* This is what your users will see when there is*/}
-  {/* an error submitting the form*/}
-  <div className="d-none" id="submitErrorMessage">
-    <div className="text-center text-danger mb-3">Error sending message!</div>
-  </div>
-  {/* Submit Button*/}
+
+
+
   <div className="text-center">
     <button
       className="btn btn-primary btn-xl text-uppercase disabled"
