@@ -167,30 +167,30 @@ const Header = () => {
                   <li className="my-2 text-[1rem] font-medium leading-[20px] text-white ">
                     {' '}
                     <LinkScroll
-                      activeClass="active"
-                      to="SERVICES"
-                      spy={true}
-                      offset={-100}
-                      smooth={true}
-                      duration={500}
-                      onSetActive={() => {
-                        setActiveLink('SERVICES');
-                      }}
-                      className={
-                        'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
-                        (activeLink === 'SERVICES'
-                          ? ' text-[#F8C311] animation-active '
-                          : ' text-white')
-                      }
-                    >
-                      SERVICES
-                    </LinkScroll>
+                    activeClass="active"
+                    to="service"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    onSetActive={() => {
+                      setActiveLink('SERVICES');
+                    }}
+                    className={
+                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline no-underline ' +
+                      (activeLink === 'SERVICES'
+                        ? 'text-[#F8C311] animation-active'
+                        : 'text-white')
+                    }
+                  >
+                    SERVICES
+                  </LinkScroll>
                   </li>
                   <li className="my-2 text-[1rem] font-medium leading-[20px] text-white">
                     {' '}
                     <LinkScroll
                       activeClass="active"
-                      to="PORTFOLIO"
+                      to="portfolio"
                       spy={true}
                       smooth={true}
                       duration={500}
@@ -213,7 +213,7 @@ const Header = () => {
                     {' '}
                     <LinkScroll
                       activeClass="active"
-                      to="ABOUT"
+                      to="about"
                       offset={-100}
                       spy={true}
                       smooth={true}
@@ -239,7 +239,7 @@ const Header = () => {
                     {' '}
                     <LinkScroll
                       activeClass="active"
-                      to="TEAM"
+                      to="testimonial"
                       offset={-100}
                       spy={true}
                       smooth={true}
@@ -264,25 +264,24 @@ const Header = () => {
                   >
                     {' '}
                     <LinkScroll
-                      activeClass="active"
-                      to="conatct"
-                      offset={-100}
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                      onSetActive={() => {
-                        setActiveLink('CONTACT');
-                        setShowNav(false);
-                      }}
-                      className={
-                        'px-4 py-2 Work cursor-pointer animation-hover inline-block relative no-underline'  +
-                        (activeLink === 'CONTACT'
-                          ? ' text-[#F8C311] animation-active '
-                          : ' text-white')
-                      }
-                    >
-                      CONTACT
-                    </LinkScroll>
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    onSetActive={() => {
+                      setActiveLink('CONTACT');
+                    }}
+                    className={
+                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
+                      (activeLink === 'CONTACT'
+                        ? ' text-[#F8C311] animation-active '
+                        : ' text-white')
+                    }
+                  >
+                    CONTACT
+                  </LinkScroll>
                   </li>
                 </ul>
               </div>
