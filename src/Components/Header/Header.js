@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link as LinkScroll } from 'react-scroll';
+import navLinks from "../../router/Navigation"
 import Button from '../../atoms/Button/Button';
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -35,114 +36,35 @@ const Header = () => {
                 />
               </div>
               <div className=" md:flex hidden navLink  text-[#fff] -tracking-tighter">
-                <div className="    cursor-pointer">
+            
+              {navLinks.map((item,index)=>{
+                return(
+                  <div className="text-[1rem] font-medium leading-[20px] text-white mx-4 cursor-pointer" key={index}>
                   <LinkScroll
                     activeClass="active"
-                    to="service"
+                    to={item.to}
                     spy={true}
                     smooth={true}
                     duration={500}
                     offset={-100}
                     onSetActive={() => {
-                      setActiveLink('SERVICES');
+                      setActiveLink(item.activeLink);
                     }}
                     className={
-                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline no-underline ' +
-                      (activeLink === 'SERVICES'
-                        ? 'text-[#F8C311] animation-active'
-                        : 'text-white')
+                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
+                      (activeLink === item.activeLink
+                        ? ' text-[#F8C311] animation-active '
+                        : ' text-white')
                     }
                   >
-                    SERVICES
+                   {item.name}
                   </LinkScroll>
                 </div>
+                )
+              })}
+             
 
-                <div className="text-[1rem] font-medium leading-[20px] text-white mx-4 cursor-pointer">
-                  <LinkScroll
-                    activeClass="active"
-                    to="portfolio"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    offset={-100}
-                    onSetActive={() => {
-                      setActiveLink('PORTFOLIO');
-                    }}
-                    className={
-                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
-                      (activeLink === 'PORTFOLIO'
-                        ? ' text-[#F8C311] animation-active '
-                        : ' text-white')
-                    }
-                  >
-                    PORTFOLIO
-                  </LinkScroll>
-                </div>
-                <div className="text-[1rem] font-medium leading-[20px] text-white mx-4 cursor-pointer">
-                  <LinkScroll
-                    activeClass="active"
-                    to="about"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                    onSetActive={() => {
-                      setActiveLink('ABOUT');
-                    }}
-                    className={
-                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
-                      (activeLink === 'ABOUT'
-                        ? ' text-[#F8C311] animation-active '
-                        : ' text-white')
-                    }
-                  >
-                    ABOUT
-                  </LinkScroll>
-                </div>
-
-                <div className="text-[1rem] font-medium leading-[20px] text-white mx-4 cursor-pointer">
-                  <LinkScroll
-                    activeClass="active"
-                    to="testimonial"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    offset={-100}
-                    onSetActive={() => {
-                      setActiveLink('TEAM');
-                    }}
-                    className={
-                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
-                      (activeLink === 'TEAM'
-                        ? ' text-[#F8C311] animation-active '
-                        : ' text-white')
-                    }
-                  >
-                    TEAM
-                  </LinkScroll>
-                </div>
-
-                <div className="text-[1rem] font-medium leading-[20px] text-white mx-4 cursor-pointer">
-                  <LinkScroll
-                    activeClass="active"
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                    onSetActive={() => {
-                      setActiveLink('CONTACT');
-                    }}
-                    className={
-                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
-                      (activeLink === 'CONTACT'
-                        ? ' text-[#F8C311] animation-active '
-                        : ' text-white')
-                    }
-                  >
-                    CONTACT
-                  </LinkScroll>
-                </div>
+              
               </div>
 
               <div className="md:hidden flex justify-end " onClick={onMoboClicks}>
@@ -163,127 +85,37 @@ const Header = () => {
                     : 'fixed top-[-100%]'
                 }
               >
-                <ul className="md:hidden flex navLink text-white p-5  flex-col mx-auto justify-center items-center">
-                  <li className="my-2 text-[1rem] font-medium leading-[20px] text-white ">
-                    {' '}
-                    <LinkScroll
+                <div className="md:hidden flex navLink text-white p-5  flex-col mx-auto justify-center items-start">
+
+                {navLinks.map((item,index)=>{
+                return(
+                  <div className="text-[1rem] font-medium leading-[20px] text-white mx-4 cursor-pointer" key={index}>
+                  <LinkScroll
                     activeClass="active"
-                    to="service"
+                    to={item.to}
                     spy={true}
                     smooth={true}
                     duration={500}
                     offset={-100}
                     onSetActive={() => {
-                      setActiveLink('SERVICES');
+                      setActiveLink(item.activeLink);
+                      setShowNav(false)
                     }}
                     className={
-                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline no-underline ' +
-                      (activeLink === 'SERVICES'
+                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline  ' +
+                      (activeLink === item.activeLink
+
                         ? 'text-[#F8C311] animation-active'
                         : 'text-white')
                     }
                   >
-                    SERVICES
+                   {item.name}
                   </LinkScroll>
-                  </li>
-                  <li className="my-2 text-[1rem] font-medium leading-[20px] text-white">
-                    {' '}
-                    <LinkScroll
-                      activeClass="active"
-                      to="portfolio"
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                      offset={-100}
-                      onSetActive={() => {
-                        setActiveLink('PORTFOLIO');
-                        setShowNav(false);
-                      }}
-                      className={
-                        'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
-                        (activeLink === 'PORTFOLIO'
-                          ? ' text-[#F8C311] animation-active '
-                          : ' text-white')
-                      }
-                    >
-                      PORTFOLIO
-                    </LinkScroll>
-                  </li>
-                  <li className="my-2 text-[1rem] font-medium leading-[20px] text-white">
-                    {' '}
-                    <LinkScroll
-                      activeClass="active"
-                      to="about"
-                      offset={-100}
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                      onSetActive={() => {
-                        setActiveLink('ABOUT');
-                        setShowNav(false);
-                      }}
-                      className={
-                        'px-4 py-2 Work cursor-pointer animation-hover inline-block relative no-underline' +
-                        (activeLink === 'ABOUT'
-                          ? ' text-[#F8C311] animation-active '
-                          : ' text-white')
-                      }
-                    >
-                      ABOUT
-                    </LinkScroll>
-                  </li>
-                  <li
-                    className="my-2 le
-                ading-[30px] text-[1rem] font-semibold"
-                  >
-                    {' '}
-                    <LinkScroll
-                      activeClass="active"
-                      to="testimonial"
-                      offset={-100}
-                      spy={true}
-                      smooth={true}
-                      duration={500}
-                      onSetActive={() => {
-                        setActiveLink('TEAM');
-                        setShowNav(false);
-                      }}
-                      className={
-                        'px-4 py-2 Work cursor-pointer animation-hover inline-block relative no-underline' +
-                        (activeLink === 'TEAM'
-                          ? ' text-[#F8C311] animation-active '
-                          : ' text-white')
-                      }
-                    >
-                      TEAM
-                    </LinkScroll>
-                  </li>
-                  <li
-                    className="my-2 le
-                ading-[30px] text-[1rem] font-semibold"
-                  >
-                    {' '}
-                    <LinkScroll
-                    activeClass="active"
-                    to="contact"
-                    spy={true}
-                    smooth={true}
-                    offset={-100}
-                    duration={500}
-                    onSetActive={() => {
-                      setActiveLink('CONTACT');
-                    }}
-                    className={
-                      'px-4 py-2 Workcursor-pointer animation-hover inline-block relative no-underline' +
-                      (activeLink === 'CONTACT'
-                        ? ' text-[#F8C311] animation-active '
-                        : ' text-white')
-                    }
-                  >
-                    CONTACT
-                  </LinkScroll>
-                  </li>
-                </ul>
+                </div>
+                )
+              })}
+                 
+                </div>
               </div>
             </div>
           </div>
